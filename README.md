@@ -1,6 +1,6 @@
 # Amatu Draw
 
-Aplikasi desain grafis vektor bergaya CorelDRAW yang berjalan di peramban — https://liemyo.github.io/corel/
+Aplikasi desain grafis vektor bergaya CorelDRAW yang berjalan di peramban — https://amatu-id.github.io/corel/
 
 Tanpa build: modul ES biasa (`index.html` + `js/` + `css/`). Pustaka pihak ketiga dimuat dari jsDelivr saat dibutuhkan:
 paper.js (boolean), Clipper (offset), opentype.js (teks → kurva), jsPDF + svg2pdf.js (PDF), ImageTracer.js (trace bitmap), qrcode-generator, Fontsource (huruf).

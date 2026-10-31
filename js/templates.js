@@ -51,7 +51,7 @@ export const TEMPLATES = [
       O.at(-1)._cx = 105;
       O.push(txt('SABTU, 14 DESEMBER 2026  ·  16.00 WIB', 'Montserrat', 12, 14, 262, { wt: 700, cs: 6, fill: solid('#ffffff') }));
       O.push(txt('Lapangan Gasibu, Bandung  ·  Tiket mulai Rp75.000', 'Montserrat', 10, 14, 272, { fill: solid('#f2c6ff') }));
-      O.push(mk('qr', { data: 'https://liemyo.github.io/corel', ec: 'M', w: 22, h: 22, fill: solid('#2b1055'), bg: '#ffffff', ol: null, tf: T(176, 264), name: 'QR tiket' }));
+      O.push(mk('qr', { data: 'https://amatu-id.github.io/corel', ec: 'M', w: 22, h: 22, fill: solid('#2b1055'), bg: '#ffffff', ol: null, tf: T(176, 264), name: 'QR tiket' }));
     }),
   },
   {

@@ -228,7 +228,7 @@ const DLG = {
   },
   async qr() {
     await loadScript('https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js');
-    const st = { data: 'https://liemyo.github.io/corel', size: 30, ec: 'M', fg: '#000000', bg: '#ffffff' };
+    const st = { data: 'https://amatu-id.github.io/corel', size: 30, ec: 'M', fg: '#000000', bg: '#ffffff' };
     const body = h('div', { class: 'col' }, F('Isi (URL, teks, nomor WA, dll.)', textField({ get: () => st.data, set: v => { st.data = v; }, w: 420 })),
       grid2(F('Ukuran (mm)', num({ unit: 'num', get: () => st.size, set: v => { st.size = v; }, w: 100 })), F('Koreksi galat', sel({ options: [['L', 'L — 7%'], ['M', 'M — 15%'], ['Q', 'Q — 25%'], ['H', 'H — 30% (aman untuk logo)']], get: () => st.ec, set: v => { st.ec = v; } }))),
       grid2(F('Warna', colorBtn({ get: () => st.fg, set: c => { st.fg = c || '#000'; }, none: false })), F('Latar', colorBtn({ get: () => st.bg, set: c => { st.bg = c; } }))));
