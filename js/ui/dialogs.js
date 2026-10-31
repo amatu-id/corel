@@ -175,7 +175,7 @@ const DLG = {
         const s = App.doc.snap;
         pane.append(check('Kunci ke objek (node, sudut, pusat, titik tengah)', () => s.objects, v => { s.objects = v; V.invalidateSnap(); }), check('Kunci ke garis bantu', () => s.guides, v => { s.guides = v; V.invalidateSnap(); }), check('Kunci ke halaman', () => s.page, v => { s.page = v; V.invalidateSnap(); }), check('Garis bantu penjajaran dinamis', () => s.dyn, v => { s.dyn = v; V.invalidateSnap(); }), h('p', { class: 'small muted' }, 'Tahan Alt saat menyeret untuk sementara mematikan penguncian.'));
       }
-      if (k === 'save') pane.append(check('Simpan otomatis ke peramban setiap 30 detik', () => App.settings.autosave, v => set('autosave', v)),
+      if (k === 'save') pane.append(check('Simpan otomatis ke peramban setiap ada perubahan', () => App.settings.autosave, v => set('autosave', v)),
         h('p', { class: 'small muted' }, 'Salinan otomatis tersimpan di peramban ini (IndexedDB) dan muncul di Layar Sambutan › Terbaru.'),
         h('button', { class: 'btn btn-ghost', onclick: async () => { const l = await Store.list(); for (const r of l) await Store.del(r.id); toast('Daftar terbaru dikosongkan'); } }, 'Kosongkan dokumen terbaru'));
     };
@@ -228,7 +228,7 @@ const DLG = {
   },
   async qr() {
     await loadScript('https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js');
-    const st = { data: 'https://amatu-id.github.io/corel', size: 30, ec: 'M', fg: '#000000', bg: '#ffffff' };
+    const st = { data: 'https://liemyo.github.io/corel', size: 30, ec: 'M', fg: '#000000', bg: '#ffffff' };
     const body = h('div', { class: 'col' }, F('Isi (URL, teks, nomor WA, dll.)', textField({ get: () => st.data, set: v => { st.data = v; }, w: 420 })),
       grid2(F('Ukuran (mm)', num({ unit: 'num', get: () => st.size, set: v => { st.size = v; }, w: 100 })), F('Koreksi galat', sel({ options: [['L', 'L — 7%'], ['M', 'M — 15%'], ['Q', 'Q — 25%'], ['H', 'H — 30% (aman untuk logo)']], get: () => st.ec, set: v => { st.ec = v; } }))),
       grid2(F('Warna', colorBtn({ get: () => st.fg, set: c => { st.fg = c || '#000'; }, none: false })), F('Latar', colorBtn({ get: () => st.bg, set: c => { st.bg = c; } }))));
